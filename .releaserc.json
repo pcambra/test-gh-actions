@@ -4,8 +4,7 @@
     "@semantic-release/release-notes-generator",
     ["@semantic-release/github", {
       "assets": [
-        {"path": "textfile.txt", "label": "Textfile"},
-        {"path": "release.zip", "label": "Zipped project"}        
+        {"path": "release.zip", "label": "Zipped project"}
       ]
     }]
   ]

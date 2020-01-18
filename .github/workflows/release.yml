@@ -18,7 +18,11 @@ jobs:
           php-version: '7.4'
           tools: composer
       - name: Install Dependencies
-        run: composer install --prefer-dist
+        run: |
+          composer install --prefer-dist
+          rm -rf .git
+          rm -rf .github
+          rm -rf .platform
       - name: Archive
         uses: montudor/action-zip@v0.1.0
         with:
