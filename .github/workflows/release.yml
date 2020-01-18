@@ -12,6 +12,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Install composer
+        uses: shivammathur/setup-php@v1
+        with:
+          php-version: '7.4'
+          tools: composer
+      - name: Install Dependencies
+        run: composer install --prefer-dist
+      - name: Archive
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: zip -qq -r ./release.zip ./
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -23,4 +34,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release 
+        run: npx semantic-release
