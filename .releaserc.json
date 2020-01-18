@@ -6,6 +6,6 @@
       "assets": [
         {"path": "textfile.txt", "label": "Textfile"}
       ]
-    }],
+    }]
   ]
 }
