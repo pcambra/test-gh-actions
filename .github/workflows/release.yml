@@ -24,7 +24,7 @@ jobs:
       - name: Archive
         uses: montudor/action-zip@v0.1.0
         with:
-          args: zip -qq -r ./release.zip ./ -x '*.git*'
+          args: zip -qq -r ./release.zip ./ -x './.git*'
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
