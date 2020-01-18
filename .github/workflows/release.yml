@@ -20,13 +20,11 @@ jobs:
       - name: Install Dependencies
         run: |
           composer install --prefer-dist
-          rm -rf .git
-          rm -rf .github
           rm -rf .platform
       - name: Archive
         uses: montudor/action-zip@v0.1.0
         with:
-          args: zip -qq -r ./release.zip ./
+          args: zip -qq -r ./release.zip ./ -x '*.git*'
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
