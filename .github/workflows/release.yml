@@ -22,9 +22,7 @@ jobs:
           composer install --prefer-dist
           rm -rf .platform
       - name: Archive
-        uses: montudor/action-zip@v0.1.0
-        with:
-          args: zip -qq -r ./release.zip ./ -x './.git*'
+        run: zip -r release.zip . -x ".git/*" ".github/*"
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
